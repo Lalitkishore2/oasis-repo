@@ -1,0 +1,22 @@
+# Compiled Python files
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+
+# Local environments
+**/venv/
+**/.venv/
+**/env/
+**/.env/
+
+# IDE files
+**/.vscode/
+**/.idea/
+
+# OS files
+**/.DS_Store
+Thumbs.db
+
+# Database & local dynamic files
+**/bmi_records.csv
+**/bmi_calculator.db

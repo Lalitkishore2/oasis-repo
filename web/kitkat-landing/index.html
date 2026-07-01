@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Indulge in the perfect break. Discover the crisp wafers and smooth milk chocolate of KitKat. Have a break, have a KitKat.">
+  <title>Have a Break, Have a KitKat | Premium Crispy Chocolate Wafers</title>
+  <style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+    
+    :root {
+      
+      --color-red-primary: #EC2227;      
+      --color-red-dark: #C1171C;         
+      --color-cream-bg: #F9F5F0;         
+      --color-cream-card: #FFFFFF;       
+      --color-cream-alt: #F1ECE6;        
+      --color-brown-dark: #3C1E1A;       
+      --color-brown-medium: #5E3E3A;     
+      --color-wafer-gold: #E6C594;       
+      
+      
+      --font-heading: 'Fredoka', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      
+      --max-width: 1200px;
+      --border-radius-sm: 8px;
+      --border-radius-md: 16px;
+      --border-radius-lg: 24px;
+      --border-radius-full: 9999px;
+      
+      
+      --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-quick: all 0.2s ease;
+      
+      --shadow-subtle: 0 8px 30px rgba(60, 30, 26, 0.04);
+      --shadow-medium: 0 16px 40px rgba(60, 30, 26, 0.08);
+      --shadow-bold: 0 24px 50px rgba(236, 34, 39, 0.15);
+    }
+
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-cream-bg);
+      color: var(--color-brown-dark);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      
+      background-image: 
+        radial-gradient(var(--color-cream-alt) 1px, transparent 1px),
+        radial-gradient(var(--color-cream-alt) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+    }
+
+    
+    ::selection {
+      background-color: var(--color-red-primary);
+      color: #FFFFFF;
+    }
+
+    
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--color-cream-bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-brown-medium);
+      border: 2px solid var(--color-cream-bg);
+      border-radius: var(--border-radius-full);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-red-primary);
+    }
+
+    
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--color-brown-dark);
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--color-brown-medium);
+    }
+
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: var(--border-radius-full);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .btn-primary {
+      background-color: var(--color-red-primary);
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(236, 34, 39, 0.2);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-red-dark);
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(236, 34, 39, 0.35);
+    }
+
+    .btn-primary:active {
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-brown-dark);
+      border: 2px solid var(--color-brown-dark);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-brown-dark);
+      color: var(--color-cream-bg);
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .btn-secondary:active {
+      transform: translateY(-1px);
+    }
+
+    
+    .header-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(249, 245, 240, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-cream-alt);
+      padding: 15px 0;
+      box-shadow: 0 2px 20px rgba(60, 30, 26, 0.04);
+      transition: var(--transition-quick);
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    
+    .logo-link {
+      text-decoration: none;
+    }
+
+    .kitkat-logo {
+      background-color: var(--color-red-primary);
+      border: 3px solid #FFFFFF;
+      border-radius: 50% / 50%;
+      padding: 6px 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-7deg);
+      box-shadow: 0 6px 15px rgba(236, 34, 39, 0.25);
+      transition: var(--transition-smooth);
+    }
+
+    .kitkat-logo:hover {
+      transform: rotate(-3deg) scale(1.08);
+      box-shadow: 0 8px 20px rgba(236, 34, 39, 0.35);
+    }
+
+    .kitkat-logo span {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      font-style: italic;
+      letter-spacing: -1.5px;
+      text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .nav-item a {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-brown-medium);
+      text-decoration: none;
+      position: relative;
+      padding: 6px 0;
+      transition: var(--transition-quick);
+    }
+
+    
+    .nav-item a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: var(--color-red-primary);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-item a:hover {
+      color: var(--color-red-primary);
+    }
+
+    .nav-item a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta-desktop {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 500;
+      background-color: var(--color-red-primary);
+      color: #FFFFFF;
+      padding: 10px 24px;
+      border-radius: var(--border-radius-full);
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(236, 34, 39, 0.2);
+      transition: var(--transition-smooth);
+      display: inline-block;
+    }
+
+    .nav-cta-desktop:hover {
+      background-color: var(--color-red-dark);
+      box-shadow: 0 6px 16px rgba(236, 34, 39, 0.3);
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    
+    .nav-toggle {
+      display: none;
+    }
+
+    .nav-toggle-label {
+      display: none;
+      cursor: pointer;
+    }
+
+    .nav-mobile-only {
+      display: none;
+    }
+
+    
+    .hero {
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 100px 0;
+    }
+
+    .hero-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      width: 100%;
+    }
+
+    .hero-content {
+      flex: 1.1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      color: var(--color-brown-dark);
+      line-height: 1.15;
+      margin-bottom: 24px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-title span.accent-red {
+      color: var(--color-red-primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    
+    .hero-title span.accent-red::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: rgba(236, 34, 39, 0.2);
+      border-radius: var(--border-radius-full);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--color-brown-medium);
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    
+    .hero-image-wrapper {
+      flex: 0.9;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    
+    .hero-image-backdrop {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-cream-alt);
+      border-radius: var(--border-radius-lg);
+      transform: rotate(-3deg);
+      z-index: -1;
+      border: 1px solid rgba(60, 30, 26, 0.05);
+    }
+
+    .hero-image-frame {
+      background-color: #FFFFFF;
+      padding: 16px;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-medium);
+      transform: rotate(2deg);
+      transition: var(--transition-smooth);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .hero-image-frame:hover {
+      transform: rotate(0deg) scale(1.03);
+      box-shadow: var(--shadow-bold);
+    }
+
+    .hero-img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      border-radius: calc(var(--border-radius-lg) - 8px);
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+    
+    .scroll-dots {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .scroll-dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--color-cream-alt);
+      border-radius: 50%;
+      transition: var(--transition-smooth);
+    }
+
+    .scroll-dot.active {
+      background-color: var(--color-red-primary);
+      transform: scale(1.3);
+    }
+
+    
+    .flourish-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 20px 0;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .flourish-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-cream-alt) 50%, transparent);
+    }
+
+    .flourish-icon {
+      display: flex;
+      gap: 6px;
+      opacity: 0.6;
+    }
+
+    .flourish-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--color-red-primary);
+      border-radius: 50%;
+    }
+
+    .flourish-dot:nth-child(2) {
+      background-color: var(--color-wafer-gold);
+      transform: scale(1.2);
+    }
+
+    .flourish-dot:nth-child(3) {
+      background-color: var(--color-brown-medium);
+    }
+
+    
+    .section {
+      padding: 100px 0;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+      padding: 0 40px;
+    }
+
+    .section-tag {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-red-primary);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--color-brown-dark);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    
+    .features-container {
+      padding: 0 40px;
+    }
+
+    .features-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      align-items: stretch; 
+    }
+
+    .feature-card {
+      flex: 1 1 300px;
+      max-width: 360px;
+      background-color: var(--color-cream-card);
+      border: 1px solid var(--color-cream-alt);
+      border-radius: var(--border-radius-lg);
+      padding: 48px 36px;
+      box-shadow: var(--shadow-subtle);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(236, 34, 39, 0.15);
+      box-shadow: var(--shadow-medium);
+    }
+
+    
+    .feature-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: var(--color-red-primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition-smooth);
+    }
+
+    .feature-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .feature-icon-wrapper {
+      width: 64px;
+      height: 64px;
+      background-color: #FFEBEC;
+      border-radius: var(--border-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      transition: var(--transition-smooth);
+      color: var(--color-red-primary);
+    }
+
+    .feature-card:hover .feature-icon-wrapper {
+      background-color: var(--color-red-primary);
+      color: #FFFFFF;
+      transform: scale(1.1) rotate(4deg);
+    }
+
+    .feature-icon-wrapper svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    .feature-title {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .feature-text {
+      font-size: 0.95rem;
+      color: var(--color-brown-medium);
+    }
+
+    
+    
+    .section-transition {
+      width: 100%;
+      line-height: 0;
+      overflow: hidden;
+    }
+    
+    .section-transition svg {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 60px;
+    }
+    
+    .transition-top {
+      background-color: var(--color-cream-bg); 
+    }
+    
+    .transition-bottom {
+      background-color: var(--color-cream-alt); 
+    }
+
+    .about-outer {
+      background-color: var(--color-cream-alt);
+    }
+
+    .about-container {
+      display: flex;
+      gap: 60px;
+      padding: 0 40px;
+      align-items: center;
+    }
+
+    .about-content {
+      flex: 1.1;
+      background-color: var(--color-cream-card);
+      border: 1px solid var(--color-cream-alt);
+      border-radius: var(--border-radius-lg);
+      padding: 56px 48px;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .story-text {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--color-brown-medium);
+      font-weight: 300;
+    }
+
+    .story-text::first-letter {
+      font-family: var(--font-heading);
+      font-size: 3.8rem;
+      float: left;
+      line-height: 0.75;
+      padding-right: 12px;
+      padding-top: 6px;
+      color: var(--color-red-primary);
+      font-weight: 700;
+    }
+
+    
+    .about-illustration {
+      flex: 0.9;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .about-svg {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+
+    
+    .about-svg .svg-finger-left {
+      transform-box: view-box;
+      transform-origin: 0 0;
+      transform: translate(250px, 200px) rotate(-10deg);
+      transition: var(--transition-smooth);
+    }
+
+    
+    .about-svg .svg-finger-right {
+      transform-box: view-box;
+      transform-origin: 0 0;
+      transform: translate(250px, 200px) rotate(10deg);
+      transition: var(--transition-smooth);
+    }
+
+    
+    .about-svg .svg-sparkle {
+      transform-box: view-box;
+      transform-origin: 250px 200px;
+      transform: scale(0.5);
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+
+    
+    .about-illustration:hover .svg-finger-left {
+      transform: translate(250px, 200px) rotate(-18deg) translate(-8px, -4px);
+    }
+
+    .about-illustration:hover .svg-finger-right {
+      transform: translate(250px, 200px) rotate(18deg) translate(8px, -4px);
+    }
+
+    
+    .about-illustration:hover .svg-sparkle {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
+    
+    .about-svg {
+      transition: var(--transition-smooth);
+    }
+    .about-illustration:hover .about-svg {
+      transform: scale(1.02);
+    }
+
+    
+    .about-svg .svg-pointer {
+      opacity: 0.75;
+      transition: var(--transition-smooth);
+    }
+    .about-illustration:hover .svg-pointer {
+      opacity: 1;
+    }
+
+    
+    .footer {
+      background-color: var(--color-brown-dark);
+      color: #FFFFFF;
+      padding: 80px 0 40px;
+      position: relative;
+    }
+
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background-color: var(--color-red-primary);
+    }
+
+    .footer-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-logo-wrapper {
+      margin-bottom: 24px;
+    }
+
+    .footer-tagline {
+      color: var(--color-cream-bg);
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 28px;
+      opacity: 0.9;
+    }
+
+    
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-icon {
+      width: 44px;
+      height: 44px;
+      background-color: var(--color-brown-medium);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    .social-icon:hover {
+      background-color: var(--color-red-primary);
+      color: #FFFFFF;
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    .social-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    
+    .footer-links-col h4 {
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .footer-links-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: var(--color-red-primary);
+    }
+
+    .footer-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-menu a {
+      color: var(--color-cream-bg);
+      text-decoration: none;
+      font-size: 0.95rem;
+      opacity: 0.8;
+      transition: var(--transition-quick);
+    }
+
+    .footer-menu a:hover {
+      color: var(--color-red-primary);
+      opacity: 1;
+      padding-left: 6px;
+    }
+
+    
+    .footer-news-col h4 {
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .footer-news-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: var(--color-red-primary);
+    }
+
+    .newsletter-text {
+      color: var(--color-cream-bg);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    
+    .newsletter-form {
+      display: flex;
+      width: 100%;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: var(--border-radius-full) 0 0 var(--border-radius-full);
+      border: 1px solid var(--color-brown-medium);
+      background-color: var(--color-brown-medium);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: var(--transition-quick);
+    }
+
+    .newsletter-input::placeholder {
+      color: var(--color-cream-bg);
+      opacity: 0.6;
+    }
+
+    .newsletter-input:focus {
+      border-color: var(--color-red-primary);
+      background-color: #4b302d;
+    }
+
+    .newsletter-btn {
+      background-color: var(--color-red-primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 0 24px;
+      border-radius: 0 var(--border-radius-full) var(--border-radius-full) 0;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .newsletter-btn:hover {
+      background-color: var(--color-red-dark);
+    }
+
+    
+    .footer-bottom {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 40px 40px 0;
+      border-top: 1px solid var(--color-brown-medium);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .copyright {
+      font-size: 0.85rem;
+      color: var(--color-cream-bg);
+      opacity: 0.7;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      font-size: 0.85rem;
+      color: var(--color-cream-bg);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: var(--transition-quick);
+    }
+
+    .footer-legal a:hover {
+      opacity: 1;
+      color: var(--color-red-primary);
+    }
+
+    
+    @media (max-width: 768px) {
+      
+      .nav-container {
+        padding: 0 24px;
+      }
+
+      .nav-cta-desktop {
+        display: none;
+      }
+
+      .nav-toggle-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      .hamburger-icon {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: var(--color-brown-dark);
+        position: relative;
+        transition: var(--transition-quick);
+      }
+
+      .hamburger-icon::before,
+      .hamburger-icon::after {
+        content: '';
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: var(--color-brown-dark);
+        position: absolute;
+        transition: var(--transition-quick);
+      }
+
+      .hamburger-icon::before {
+        top: -6px;
+      }
+
+      .hamburger-icon::after {
+        bottom: -6px;
+      }
+
+      
+      .nav-toggle:checked ~ .nav-toggle-label .hamburger-icon {
+        background-color: transparent;
+      }
+
+      .nav-toggle:checked ~ .nav-toggle-label .hamburger-icon::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      .nav-toggle:checked ~ .nav-toggle-label .hamburger-icon::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+      }
+
+      
+      .nav-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-cream-bg);
+        border-bottom: 1px solid var(--color-cream-alt);
+        box-shadow: 0 12px 30px rgba(60, 30, 26, 0.06);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 999;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        gap: 0;
+        padding: 16px 0;
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .nav-item {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-item a {
+        display: block;
+        padding: 14px 0;
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(60, 30, 26, 0.02);
+      }
+
+      .nav-item a::after {
+        display: none;
+      }
+
+      .nav-mobile-only {
+        display: block;
+        padding: 16px 24px 8px;
+      }
+
+      .nav-menu-cta {
+        background-color: var(--color-red-primary) !important;
+        color: #FFFFFF !important;
+        border-radius: var(--border-radius-full);
+        font-family: var(--font-heading);
+        font-weight: 500;
+        padding: 12px 0 !important;
+        box-shadow: 0 4px 12px rgba(236, 34, 39, 0.2);
+        max-width: 280px;
+        margin: 0 auto;
+        border: none !important;
+      }
+
+      .nav-toggle:checked ~ .nav-navigation {
+        max-height: 320px;
+      }
+
+      
+      .section {
+        padding: 60px 0;
+      }
+
+      
+      .hero {
+        padding: 40px 0 60px;
+      }
+
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 0 20px;
+      }
+
+      .hero-content {
+        align-items: center;
+      }
+
+      .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-image-frame {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      
+      .features-container {
+        padding: 0 20px;
+      }
+
+      .features-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature-card {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      
+      .about-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+      }
+
+      .about-content {
+        padding: 36px 24px;
+        width: 100%;
+      }
+
+      .about-illustration {
+        width: 100%;
+        order: -1; 
+      }
+
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        text-align: center;
+        gap: 32px;
+      }
+
+      .footer-brand {
+        align-items: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-links-col h4::after,
+      .footer-news-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .newsletter-form {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px 0;
+      }
+
+      .footer-legal {
+        justify-content: center;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/png" href="images/kitkat_hero.png">
+</head>
+<body>
+
+  
+  <header class="header-nav" id="header">
+    <div class="nav-container">
+      
+      <a href="#" class="logo-link" aria-label="KitKat Home">
+        <div class="kitkat-logo">
+          <span>KitKat</span>
+        </div>
+      </a>
+
+      
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      
+      
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span class="hamburger-icon"></span>
+      </label>
+
+      
+      <nav aria-label="Main Navigation" class="nav-navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#features">Products</a></li>
+          <li class="nav-item"><a href="#about">Our Story</a></li>
+          <li class="nav-item"><a href="#contact">Contact</a></li>
+          
+          <li class="nav-item nav-mobile-only"><a href="#contact" class="nav-menu-cta">Buy Now</a></li>
+        </ul>
+      </nav>
+
+      
+      <a href="#contact" class="nav-cta-desktop">Buy Now</a>
+    </div>
+  </header>
+
+  
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Have a <span class="accent-red">Break</span>.<br>
+          Have a <span class="accent-red">KitKat</span>.
+        </h1>
+        <p class="hero-subtitle">
+          Indulge in the perfect harmony of crispy baked wafers and smooth, rich milk chocolate. Crafted for moments of pure, blissful pause in your day.
+        </p>
+        <div class="hero-actions">
+          <a href="#features" class="btn btn-primary">Take a Break</a>
+          <a href="#about" class="btn btn-secondary">Our Story</a>
+        </div>
+      </div>
+
+      
+      <div class="hero-image-wrapper">
+        <div class="hero-image-backdrop"></div>
+        <div class="hero-image-frame">
+          <img src="images/kitkat_hero.png" alt="A premium studio shot of a classic KitKat chocolate bar, snapped and showing its glossy coating and crispy layers" class="hero-img">
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="scroll-dots" aria-hidden="true">
+      <div class="scroll-dot active"></div>
+      <div class="scroll-dot"></div>
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  
+  <div class="flourish-divider" aria-hidden="true">
+    <div class="flourish-line"></div>
+    <div class="flourish-icon">
+      <div class="flourish-dot"></div>
+      <div class="flourish-dot"></div>
+      <div class="flourish-dot"></div>
+    </div>
+    <div class="flourish-line"></div>
+  </div>
+
+  
+  <section class="section" id="features">
+    <div class="section-header">
+      <span class="section-tag">Crafted to Perfection</span>
+      <h2 class="section-title">The Anatomy of a Break</h2>
+      <p class="section-desc">
+        What makes a KitKat so iconic? It is the careful orchestration of three distinct elements, designed to give you the ultimate sensory escape.
+      </p>
+    </div>
+
+    
+    <div class="features-container">
+      <div class="features-flex">
+        
+        
+        <div class="feature-card">
+          <div class="feature-icon-wrapper" aria-hidden="true">
+            
+            <svg viewBox="0 0 24 24">
+              <path d="M4,4 H20 V20 H4 Z M6,6 V18 H18 V6 Z M9,6 V18 M12,6 V18 M15,6 V18 M6,9 H18 M6,12 H18 M6,15 H18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Crispy Wafer</h3>
+          <p class="feature-text">
+            Three layers of light, crispy oven-baked wafers, crafted to deliver the signature delicate crunch in every single bite.
+          </p>
+        </div>
+
+        
+        <div class="feature-card">
+          <div class="feature-icon-wrapper" aria-hidden="true">
+            
+            <svg viewBox="0 0 24 24">
+              <path d="M12,2 C12,2 6,8 6,12 C6,15.3 8.7,18 12,18 C15.3,18 18,15.3 18,12 C18,8 12,2 12,2 Z M12,20 C8.7,20 2,16 2,12 C2,10 4,8 4,8 M20,8 C20,8 22,10 22,12 C22,16 15.3,20 12,20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Velvet Chocolate</h3>
+          <p class="feature-text">
+            Enrobed in a thick, luxurious coating of sustainably sourced milk chocolate, melting smoothly to coat the crispy core.
+          </p>
+        </div>
+
+        
+        <div class="feature-card">
+          <div class="feature-icon-wrapper" aria-hidden="true">
+            
+            <svg viewBox="0 0 24 24">
+              <path d="M8,4 H10 V20 H8 Z M14,4 H16 V20 H14 Z M4,12 H8 M16,12 H20 M10,8 L14,8 M10,16 L14,16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">The Perfect Snap</h3>
+          <p class="feature-text">
+            Intentionally designed with four individual fingers, made to be snapped, shared, and savored at your own pace.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="section-transition transition-top" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0 L1200,80 L1200,120 L0,120 Z" fill="#F1ECE6"/>
+    </svg>
+  </div>
+
+  <div class="about-outer">
+    <section class="section" id="about">
+      <div class="section-header">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">The Ritual of the Break</h2>
+      </div>
+
+      <div class="about-container">
+        
+        <div class="about-content">
+          <p class="story-text">
+            Since 1935, KitKat has been the companion to moments of pause. We believe that a break isn't just a pause in your day—it's a ritual. It’s the satisfying snap of the chocolate, the light crunch of the wafer, and the momentary escape from the rush of the world. Crafted with carefully selected cocoa and baked to golden perfection, every bar is a celebration of taking a moment for yourself. Enjoying a KitKat is a reminder to slow down, take a deep breath, and appreciate the sweetness in between.
+          </p>
+        </div>
+
+        
+        <div class="about-illustration">
+          <svg viewBox="0 0 500 400" class="about-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              
+              <filter id="svg-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#3C1E1A" flood-opacity="0.15"/>
+              </filter>
+              
+              
+              <linearGradient id="choco-top" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#5E3E3A"/>
+                <stop offset="100%" stop-color="#3C1E1A"/>
+              </linearGradient>
+              <linearGradient id="choco-front" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#3C1E1A"/>
+                <stop offset="100%" stop-color="#261210"/>
+              </linearGradient>
+              <linearGradient id="wafer-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#F3D5A2"/>
+                <stop offset="50%" stop-color="#E6C594"/>
+                <stop offset="100%" stop-color="#D7B27C"/>
+              </linearGradient>
+              
+              
+              <radialGradient id="bg-glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#F1ECE6" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            
+            <circle cx="250" cy="200" r="180" fill="url(#bg-glow)"/>
+
+            
+            <g class="svg-finger-left" filter="url(#svg-shadow)">
+              
+              <path d="M -140,-25 L 0,-25 L 0,25 L -140,25 Z" fill="url(#choco-front)"/>
+              
+              <path d="M -140,-25 L 0,-25 L -10,-40 L -130,-40 Z" fill="url(#choco-top)"/>
+              
+              <text x="-70" y="-30" font-family="'Fredoka', sans-serif" font-weight="bold" font-size="12" font-style="italic" fill="#261210" opacity="0.5" text-anchor="middle" transform="skewX(-10)">KitKat</text>
+              
+              <path d="M 0,-25 C -2,-15 2,-5 -1,5 C 1,15 -2,20 0,25 Z" fill="#261210" opacity="0.6"/>
+            </g>
+
+            
+            <g class="svg-finger-right" filter="url(#svg-shadow)">
+              
+              <path d="M 0,-25 L 140,-25 L 140,25 L 0,25 Z" fill="url(#choco-front)"/>
+              
+              <path d="M 0,-25 L 140,-25 L 130,-40 L 10,-40 Z" fill="url(#choco-top)"/>
+              
+              <text x="70" y="-30" font-family="'Fredoka', sans-serif" font-weight="bold" font-size="12" font-style="italic" fill="#261210" opacity="0.5" text-anchor="middle" transform="skewX(-10)">KitKat</text>
+
+              
+              <path d="M 0,-25 L -15,-35 L -15,15 L 0,25 Z" fill="#261210"/>
+              
+              
+              
+              <path d="M -2,-17 L -13,-25 L -13,-20 L -2,-12 Z" fill="url(#wafer-grad)"/>
+              
+              <path d="M -2,-12 L -13,-20 L -13,-17 L -2,-9 Z" fill="#3C1E1A"/>
+              
+              <path d="M -2,-9 L -13,-17 L -13,-12 L -2,-4 Z" fill="url(#wafer-grad)"/>
+              
+              <path d="M -2,-4 L -13,-12 L -13,-9 L -2,-1 Z" fill="#3C1E1A"/>
+              
+              <path d="M -2,-1 L -13,-9 L -13,-4 L -2,4 Z" fill="url(#wafer-grad)"/>
+            </g>
+
+            
+            <g class="svg-sparkle" stroke="#EC2227" stroke-width="3" stroke-linecap="round">
+              <line x1="250" y1="150" x2="250" y2="135"/>
+              <line x1="228" y1="165" x2="213" y2="155"/>
+              <line x1="272" y1="165" x2="287" y2="155"/>
+              <line x1="250" y1="240" x2="250" y2="255"/>
+            </g>
+
+            
+            
+            <g class="svg-pointer">
+              <text x="350" y="70" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#3C1E1A">Velvety Milk Chocolate</text>
+              <path d="M 340,66 L 320,66 L 320,180" stroke="#E6C594" stroke-width="1.5" fill="none" stroke-dasharray="3,3"/>
+              <circle cx="320" cy="180" r="4" fill="#EC2227"/>
+            </g>
+
+            
+            <g class="svg-pointer">
+              <text x="30" y="335" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#3C1E1A">Three Crispy Wafers</text>
+              <path d="M 155,331 L 243,331 L 243,195" stroke="#E6C594" stroke-width="1.5" fill="none" stroke-dasharray="3,3"/>
+              <circle cx="243" cy="195" r="4" fill="#EC2227"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="section-transition transition-bottom" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,40 L1200,0 L1200,120 L0,120 Z" fill="#3C1E1A"/>
+    </svg>
+  </div>
+
+  
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      
+      
+      <div class="footer-brand">
+        <div class="footer-logo-wrapper">
+          <div class="kitkat-logo">
+            <span>KitKat</span>
+          </div>
+        </div>
+        <p class="footer-tagline">
+          Encouraging the world to take a break since 1935. Made with 100% certified sustainable cocoa.
+        </p>
+        
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24">
+              <path d="M7.75,2h8.5A5.75,5.75,0,0,1,22,7.75v8.5A5.75,5.75,0,0,1,16.25,22H7.75A5.75,5.75,0,0,1,2,16.25V7.75A5.75,5.75,0,0,1,7.75,2Zm8.25,2.5H8A3.5,3.5,0,0,0,4.5,8v8A3.5,3.5,0,0,0,8,19.5h8A3.5,3.5,0,0,0,19.5,16V8A3.5,3.5,0,0,0,16,4.5ZM12,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,12,7.5Zm0,2.5A2,2,0,1,0,14,12,2,2,0,0,0,12,10Zm4.5-4a1.25,1.25,0,1,1-1.25,1.25A1.25,1.25,0,0,1,16.5,6Z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg viewBox="0 0 24 24">
+              <path d="M24,4.55a9.83,9.83,0,0,1-2.83.78,4.93,4.93,0,0,0,2.17-2.72,9.86,9.86,0,0,1-3.12,1.19,4.92,4.92,0,0,0-8.38,4.48A14,14,0,0,1,1.64,3.16,4.92,4.92,0,0,0,3.16,9.72a4.9,4.9,0,0,1-2.23-.61v.06a4.92,4.92,0,0,0,3.95,4.82,4.9,4.9,0,0,1-2.22.08,4.92,4.92,0,0,0,4.6,3.42A9.87,9.87,0,0,1,0,19.54a13.94,13.94,0,0,0,7.55,2.21c9.06,0,14-7.5,14-14,0-.21,0-.43,0-.64A10,10,0,0,0,24,4.55Z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24">
+              <path d="M22,12c0-5.52-4.48-10-10-10S2,6.48,2,12c0,4.84,3.44,8.87,8,9.8V15H8v-3h2V9.5C10,7.57,11.57,6,13.5,6H16v3h-2c-.55,0-1,.45-1,1v2h3v3h-3v6.95C18.56,20.87,22,16.84,22,12Z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <svg viewBox="0 0 24 24">
+              <path d="M23.5,6.2c0,0-.2-1.6-.9-2.3a3.1,3.1,0,0,0-2.2-.9C16.2,2.7,12,2.7,12,2.7s-4.2,0-8.4.3a3.1,3.1,0,0,0-2.2.9C.7,4.6.5,6.2.5,6.2S.3,8.1.3,10v3.8c0,1.9.2,3.8.2,3.8s.2,1.6.9,2.3a3.1,3.1,0,0,0,2.2.9c4.2.3,8.4.3,8.4.3s4.2,0,8.4-.3a3.1,3.1,0,0,0,2.2-.9c.7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V10S23.7,8.1,23.5,6.2ZM9.5,15.5V8.5l6.5,3.5Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      
+      <div class="footer-links-col">
+        <h4>Explore</h4>
+        <ul class="footer-menu">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">Products</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      
+      <div class="footer-news-col">
+        <h4>The Break Club</h4>
+        <p class="newsletter-text">
+          Subscribe to receive exclusive offers, new flavor announcements, and tips on how to master the art of taking a break.
+        </p>
+        <form class="newsletter-form" action="#" method="POST" onsubmit="return false;">
+          <input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address for newsletter" required>
+          <button type="submit" class="newsletter-btn">Join</button>
+        </form>
+      </div>
+
+    </div>
+
+    
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; 2026 Nestlé. KitKat is a registered trademark of Société des Produits Nestlé S.A. All rights reserved.
+      </p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

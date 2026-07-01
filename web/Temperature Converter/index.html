@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coastal Temperature Converter | Breeze & Heat</title>
+  <meta name="description" content="An elegant, coastal-themed temperature converter with real-time validation, multi-unit outputs, and dynamic weather-state backgrounds.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Seaweed+Script&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="coastal-texture">
+  <!-- Dynamic Background Overlay for Smooth Transitions -->
+  <div class="dynamic-bg-overlay" id="bgOverlay"></div>
+
+  <!-- Decorative Top Wave -->
+  <div class="header-wave">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z" fill="var(--coastal-navy)"></path>
+    </svg>
+  </div>
+
+  <header class="coastal-header">
+    <div class="logo-container">
+      <!-- Ship Wheel / Compass SVG -->
+      <svg class="nautical-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="8"></circle>
+        <circle cx="12" cy="12" r="2"></circle>
+        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M19.07 4.93l-1.41 1.41M6.34 17.66l-1.41 1.41"></path>
+      </svg>
+      <span class="coastal-script">Seaside Breeze</span>
+    </div>
+    <h1 class="coastal-display">Temperature Converter</h1>
+    <p class="coastal-tagline">Convert between Celsius, Fahrenheit, and Kelvin with coastal serenity</p>
+  </header>
+
+  <main class="main-container">
+    <!-- Main Converter Card -->
+    <div class="coastal-card coastal-glass" id="converterCard">
+      
+      <!-- Input Section -->
+      <div class="input-section">
+        <div class="input-group">
+          <label for="tempInput" class="input-label">Enter Temperature</label>
+          <div class="input-wrapper">
+            <input 
+              type="text" 
+              id="tempInput" 
+              placeholder="e.g. 25" 
+              autocomplete="off"
+              aria-label="Temperature value"
+            >
+            <!-- Status Indicators (Validation) -->
+            <div class="validation-indicator" id="validationIndicator">
+              <!-- Success/Error icon will be injected here -->
+            </div>
+          </div>
+          <div class="error-message" id="errorMessage" role="alert"></div>
+        </div>
+
+        <div class="unit-selector-group">
+          <span class="input-label">Input Unit</span>
+          <div class="unit-tabs" role="radiogroup" aria-label="Input temperature unit">
+            <button class="unit-tab active" data-unit="C" role="radio" aria-checked="true">
+              <span class="unit-symbol">°C</span>
+              <span class="unit-name">Celsius</span>
+            </button>
+            <button class="unit-tab" data-unit="F" role="radio" aria-checked="false">
+              <span class="unit-symbol">°F</span>
+              <span class="unit-name">Fahrenheit</span>
+            </button>
+            <button class="unit-tab" data-unit="K" role="radio" aria-checked="false">
+              <span class="unit-symbol">K</span>
+              <span class="unit-name">Kelvin</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Convert Button -->
+      <div class="action-container">
+        <button id="convertBtn" class="coastal-btn-primary">
+          <span>Convert Temperature</span>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Dynamic Visualizer Gauge (Thermo-meter/Seaside State) -->
+      <div class="climate-gauge-container">
+        <div class="gauge-header">
+          <span class="gauge-label">Coastal Climate State:</span>
+          <span class="climate-status-badge" id="climateBadge">Sandy Shore (Mild)</span>
+        </div>
+        <div class="gauge-track">
+          <div class="gauge-fill" id="gaugeFill"></div>
+          <div class="gauge-pointer" id="gaugePointer"></div>
+        </div>
+        <div class="gauge-labels">
+          <span>Glacial Deep</span>
+          <span>Breezy Mist</span>
+          <span>Mild Sand</span>
+          <span>Warm Sunset</span>
+          <span>Tropical Heat</span>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="coastal-rope-divider"></div>
+
+      <!-- Output Section -->
+      <div class="output-section">
+        <h2 class="output-title">Converted Values</h2>
+        
+        <div class="output-grid">
+          <!-- Celsius Output Card -->
+          <div class="output-card" id="cardC">
+            <div class="card-wave-bg"></div>
+            <div class="output-header">
+              <span class="output-label">Celsius</span>
+              <span class="output-badge bg-celsius">°C</span>
+            </div>
+            <div class="output-value" id="valC">--</div>
+            <div class="formula-box" id="formulaC">Base Unit</div>
+          </div>
+
+          <!-- Fahrenheit Output Card -->
+          <div class="output-card" id="cardF">
+            <div class="card-wave-bg"></div>
+            <div class="output-header">
+              <span class="output-label">Fahrenheit</span>
+              <span class="output-badge bg-fahrenheit">°F</span>
+            </div>
+            <div class="output-value" id="valF">--</div>
+            <div class="formula-box" id="formulaF">Formula: (C × 9/5) + 32</div>
+          </div>
+
+          <!-- Kelvin Output Card -->
+          <div class="output-card" id="cardK">
+            <div class="card-wave-bg"></div>
+            <div class="output-header">
+              <span class="output-label">Kelvin</span>
+              <span class="output-badge bg-kelvin">K</span>
+            </div>
+            <div class="output-value" id="valK">--</div>
+            <div class="formula-box" id="formulaK">Formula: C + 273.15</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bottom Wave Divider -->
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,64L120,58.7C240,53,480,43,720,48C960,53,1200,75,1320,85.3L1440,96L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z" fill="var(--coastal-navy)"></path>
+    </svg>
+  </div>
+
+  <!-- Footer -->
+  <footer class="coastal-footer">
+    <div class="footer-content">
+      <p class="footer-text">&copy; 2026 Seaside Breeze. Crafting utilities with natural elegance.</p>
+      <div class="coastal-decor">
+        <!-- Seagull SVGs -->
+        <svg class="decor-seagull" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M2 18c4-2 7-2 10 0 3-2 6-2 10 0" stroke-linecap="round"></path>
+        </svg>
+        <svg class="decor-seagull delayed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M4 14c3-1.5 5-1.5 8 0 3-1.5 5-1.5 8 0" stroke-linecap="round"></path>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript -->
+  <script src="app.js"></script>
+</body>
+</html>
